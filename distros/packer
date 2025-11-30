@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PACKAGE="${PACKAGE} virt-manager libvirt qemu-desktop podman podman-desktop docker code apparmor lvm2 testdisk btrfs-progs xfsprogs ntfs-3g dosfstools ethtool rsync grsync "
-AURPACK="${AURPACK} winbox "
-FLATPAK=( flathub net.agalwood.Motrix )
-RDAEMON="${RDAEMON} libvirtd docker.socket "
+PACKAGE="${PACKAGE} qtcreator yad nginx code gnome-builder ruby go composer php nodejs-lts-jod docker "
+AURPACK="${AURPACK} "
+FLATPAK=(  )
+RDAEMON="${RDAEMON} nginx "
 GDAEMON="${GDAEMON}"
 
 
