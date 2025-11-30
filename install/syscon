@@ -5,9 +5,9 @@ source /post/packer
 
 #HOSTNAME
 if [[ ! -z $( echo $SYSTHOST ) ]];then
-    echo  "$SYSTHOST" > /etc/hostname
+    echo "$SYSTHOST" > /etc/hostname
 else
-    echo  "$DISTRO_UNIQ" > /etc/hostname
+    echo "$DISTRO_UNIQ" > /etc/hostname
 fi
 
 
