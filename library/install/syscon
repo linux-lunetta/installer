@@ -110,23 +110,6 @@ echo "root=$DISKPROC" > /etc/cmdline.d/01-boot.conf &&
 
 
 ##
-## SERVICE
-for system_daemon in "${RDAEMONS[@]}"; do
-    systemctl enable "$system_daemon"
-done
-
-for global_daemon in "${GDAEMONS[@]}"; do
-  	systemctl enable --global "$global_daemon"
-done
-
-
-## network
-if [[ $DISTRO_NETS == "nmt" ]];then
-    systemctl disable NetworkManager-wait-online.service
-fi
-
-
-##
 ## BOOTUPS
 
 ## grub2
@@ -148,6 +131,23 @@ if [[ $( echo $DISTRO_BOOT ) == "sysd" ]]; then
     bootctl --path=/boot/ install
 fi
 
+
+
+##
+## SERVICE
+for sys_daemon in "${RDAEMONS[@]}"; do
+    systemctl enable "$sys_daemon"
+done
+
+for glob_daemon in "${GDAEMONS[@]}"; do
+  	systemctl enable --global "$glob_daemon"
+done
+
+
+## network
+if [[ $DISTRO_NETS == "nmt" ]];then
+    systemctl disable NetworkManager-wait-online.service
+fi
 
 
 ## FINISHING
